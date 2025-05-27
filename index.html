@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Drawing Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: { // Accent Color
+              DEFAULT: '#0EA5E9', // sky-500
+              hover: '#0284C7',   // sky-600
+            },
+            secondary: { // Secondary Buttons
+              DEFAULT: '#334155', // slate-700
+              hover: '#475569',   // slate-600
+            },
+            light: '#F8FAFC',     // slate-50 (Primary Text)
+            secondaryText: '#94A3B8', // slate-400 (Secondary/Placeholder Text)
+            dark: '#1E293B',      // slate-800 (Panels/Cards)
+            darker: '#0F172A',    // slate-900 (Body/Page Background)
+            
+            success: {
+              DEFAULT: '#16A34A', // green-600 (for text, slightly darker for contrast on light bg)
+              text: '#6EE7B7',    // green-300 (for text on dark bg) - User wants green-300
+              bgOpacity: 'rgba(22, 101, 52, 0.5)', // bg-green-700/50 - User wants green-700/50 (Using #1A2E27 for bg-green-700/50 approx hex)
+                                                // Tailwind green-700 is #15803D. RGB: 21, 128, 61
+            },
+            error: {
+              DEFAULT: '#DC2626', // red-600
+              text: '#FCA5A5',    // red-300 - User wants red-300
+              bgOpacity: 'rgba(153, 27, 27, 0.5)', // bg-red-700/50 - User wants red-700/50 (Using #4A0E0E for bg-red-700/50 approx hex)
+                                                // Tailwind red-700 is #B91C1C. RGB: 185, 28, 28
+            },
+            warning: { // Neutral feedback
+              DEFAULT: '#D97706', // amber-600
+              text: '#FCD34D',    // amber-300 - User wants yellow-300 (amber-300)
+              bgOpacity: 'rgba(180, 83, 9, 0.5)',  // bg-yellow-700/50 (amber-700/50) - User wants yellow-700/50
+                                                // Tailwind amber-700 is #B45309. RGB: 180, 83, 9
+            },
+            panelBorder: '#334155', // slate-700
+            inputBorder: '#475569', // slate-600
+            imageBorder: '#475569', // slate-600
+            // placeholder color is now secondaryText
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Webkit Scrollbar Styles */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1E293B; /* dark (slate-800) */
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #0EA5E9; /* primary.DEFAULT (sky-500) */
+      border-radius: 10px;
+      border: 2px solid #1E293B; /* dark (slate-800) to create a small gap */
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0284C7; /* primary.hover (sky-600) */
+    }
+
+    /* Firefox scrollbar styles */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #0EA5E9 #1E293B; /* thumb track - primary.DEFAULT dark */
+    }
+
+    /* Selection highlight */
+    ::selection {
+      background-color: #0EA5E9; /* primary.DEFAULT (sky-500) */
+      color: #F8FAFC; /* light (slate-50) */
+    }
+    ::-moz-selection { /* Firefox */
+      background-color: #0EA5E9;
+      color: #F8FAFC;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.1.0"
+  }
+}
+</script>
+</head>
+<body class="bg-darker text-light font-sans">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>

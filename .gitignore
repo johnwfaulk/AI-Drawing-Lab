@@ -1,0 +1,49 @@
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.vite-inspect/
+
+# Dependency directories
+node_modules/
+jspm_packages/
+web_modules/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.bak
+*.pyc
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.rar
+*.7z
+*.tgz
+*.gz
+*.log
+*.temp
+*.tmp
+*.swp
+*~
+.DS_Store
+Thumbs.db
+npm-debug.log
+yarn-debug.log
+
+# Environment variables
+.env
+.env.*
+!.env.local # Keep .env.local if you want to use it for local development, but don't commit it to prod
+
+# Build output
+/dist
+/build
+/out
